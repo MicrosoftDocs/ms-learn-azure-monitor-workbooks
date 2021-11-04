@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachineName": {
+            "type": "string",
+            "metadata": {
+                "description": "Virtual Machine name"
+            }
+        },
+        "tagName":{
+            "type":"string",
+            "metadata": {
+                "description" : "Tag Name"
+            }
+        },
+        "tagValue": {
+            "type": "string",
+            "metadata": {
+                "description": "Tag Value"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('virtualMachineName')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "[parameters('tagName')]": "[parameters('tagValue')]"
+            }
+        
+        }
+    ],
+    "outputs": {}
+}
