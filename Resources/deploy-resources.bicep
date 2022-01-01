@@ -70,36 +70,36 @@ runcmd:
 var VMSkus = [
   {
     name:'Standard_DS2_v2'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_DS1_v2'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_B2s'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_B1s'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_B2ms'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_B2ms'
-    location: 'eastus'
+    location: 'westus3'
   }
   {
     name:'Standard_B1ms'
-    location: 'eastus'
+    location: 'westus3'
   }
 ]
 
 //var nicName = 'myVMNic'
-var virtualNetworkLocation = 'eastus'
+var virtualNetworkLocation = 'westus3'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'Subnet'
 var subnetPrefix = '10.0.0.0/24'
