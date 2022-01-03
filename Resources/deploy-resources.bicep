@@ -3,7 +3,7 @@
 param applicationName string = 'to-do-app${uniqueString(resourceGroup().id)}'
 
 @description('Location for all resources.')
-param location string = resourceGroup().location
+param location string = 'uksouth'
 
 @description('App Service Plan\'s pricing tier. Details at https://azure.microsoft.com/en-us/pricing/details/app-service/')
 @allowed([
@@ -70,20 +70,20 @@ runcmd:
 var VMSkus = [
   {
     name:'Standard_DS2_v2'
-    location: 'eastus2'
+    location: 'uksouth'
   }
   {
     name:'Standard_DS1_v2'
-    location: 'eastus2'
+    location: 'uksouth'
   }
   {
     name:'Standard_B2ms'
-    location: 'eastus2'
+    location: 'uksouth'
   }
 ]
 
 //var nicName = 'myVMNic'
-var virtualNetworkLocation = 'eastus2'
+var virtualNetworkLocation = 'uksouth'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'Subnet'
 var subnetPrefix = '10.0.0.0/24'
