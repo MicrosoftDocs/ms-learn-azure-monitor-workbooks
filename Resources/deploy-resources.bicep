@@ -77,23 +77,7 @@ var VMSkus = [
     location: 'eastus2'
   }
   {
-    name:'Standard_B2s'
-    location: 'eastus2'
-  }
-  {
-    name:'Standard_B1s'
-    location: 'eastus2'
-  }
-  {
     name:'Standard_B2ms'
-    location: 'eastus2'
-  }
-  {
-    name:'Standard_B2ms'
-    location: 'eastus2'
-  }
-  {
-    name:'Standard_B1ms'
     location: 'eastus2'
   }
 ]
