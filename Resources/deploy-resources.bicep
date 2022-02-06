@@ -40,7 +40,7 @@ param databaseName string = 'Tasks'
 param containerName string = 'Items'
 
 @description('Virtual machine admin username')
-param adminUserName string 
+param adminUserName string = "contosoAdmin"
 
 @description('Virtual machine password')
 @secure()
@@ -49,8 +49,6 @@ param adminPassword string
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
 //param windowsOSVersion string = '2019-Datacenter'
 param ubuntuOsVersion string = '20_04-lts-gen2'
-
-
 
 var cosmosAccountName_var = toLower(applicationName)
 var websiteName_var = applicationName
