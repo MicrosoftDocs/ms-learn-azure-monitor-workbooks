@@ -40,7 +40,7 @@ param databaseName string = 'Tasks'
 param containerName string = 'Items'
 
 @description('Virtual machine admin username')
-param adminUserName string = "contosoAdmin"
+param adminUserName string = 'azureuser'
 
 @description('Virtual machine password')
 @secure()
