@@ -3,7 +3,7 @@
 param applicationName string = 'to-do-app${uniqueString(resourceGroup().id)}'
 
 @description('Location for all resources.')
-param location string = 'uksouth'
+param location string = resourceGroup().location
 
 @description('App Service Plan\'s pricing tier. Details at https://azure.microsoft.com/en-us/pricing/details/app-service/')
 @allowed([
@@ -68,20 +68,19 @@ runcmd:
 var VMSkus = [
   {
     name:'Standard_DS2_v2'
-    location: 'uksouth'
+    location: location
   }
   {
     name:'Standard_DS1_v2'
-    location: 'uksouth'
+    location: location
   }
   {
     name:'Standard_B2ms'
-    location: 'uksouth'
+    location: location
   }
 ]
 
 //var nicName = 'myVMNic'
-var virtualNetworkLocation = 'uksouth'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'Subnet'
 var subnetPrefix = '10.0.0.0/24'
@@ -120,7 +119,7 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: appInsightsName
   location: location
   kind: 'web'
-  properties: { 
+  properties: {
     Application_Type: 'web'
     WorkspaceResourceId: la.id
   }
@@ -214,7 +213,7 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
 
 resource vn 'Microsoft.Network/virtualNetworks@2020-06-01' = {
   name: virtualNetworkName
-  location: virtualNetworkLocation
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: [
