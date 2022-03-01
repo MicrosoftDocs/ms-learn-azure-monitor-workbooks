@@ -3,7 +3,7 @@
 param applicationName string = 'to-do-app${uniqueString(resourceGroup().id)}'
 
 @description('Location for all resources.')
-param location string = resourceGroup().location
+param location string = 'eastus'
 
 @description('App Service Plan\'s pricing tier. Details at https://azure.microsoft.com/en-us/pricing/details/app-service/')
 @allowed([
